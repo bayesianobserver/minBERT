@@ -14,7 +14,7 @@ import torch
 import torch.nn as nn
 from torch.nn import functional as F
 
-from mingpt.utils import CfgNode as CN
+from minbert.utils import CfgNode as CN
 
 # -----------------------------------------------------------------------------
 
@@ -238,7 +238,7 @@ class BERT(nn.Module):
         return logits, loss
 
     @torch.no_grad()
-    def generate(self, idx): 
+    def generate_output(self, idx): 
         ''' Simply calls the forward method, and converts the logits into the most likely tokens'''
         x = self.forward(idx)[0]
         x = x.argmax(dim = 2)

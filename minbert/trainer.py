@@ -8,7 +8,7 @@ from collections import defaultdict
 
 import torch
 from torch.utils.data.dataloader import DataLoader
-from mingpt.utils import CfgNode as CN
+from minbert.utils import CfgNode as CN
 
 class Trainer:
 
@@ -87,10 +87,10 @@ class Trainer:
                 data_iter = iter(train_loader)
                 batch = next(data_iter)
             batch = [t.to(self.device) for t in batch]
-            x, y = batch
+            x, y, mask = batch
 
             # forward the model
-            logits, self.loss = model(x, y)
+            logits, self.loss = model(x, y, mask)
 
             # backprop and update the parameters
             model.zero_grad(set_to_none=True)
