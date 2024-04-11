@@ -1,11 +1,5 @@
 """
 Full definition of a BERT Language Model, all of it in this single file.
-
-References:
-1) the official BERT-2 TensorFlow implementation released by OpenAI:
-https://github.com/openai/BERT-2/blob/master/src/model.py
-2) huggingface/transformers PyTorch implementation:
-https://github.com/huggingface/transformers/blob/main/src/transformers/models/BERT2/modeling_BERT2.py
 """
 
 import math
